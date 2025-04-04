@@ -44,7 +44,7 @@ To upload a document and query, use the following cURL command:
 
 ```sh
 curl --location 'http://localhost:8080/api/v1' \
-     --form 'file=@"/Users/shtiwari/Downloads/job-offer-letter-template.pdf"'
+     --form 'file=@"${location}/job-offer-letter-template.pdf"'
 
 curl --location --request GET 'http://localhost:8080/api/v1/query?query="Are%20they%20free%20to%20terminate%20employment%20agreement%3F"'
 
