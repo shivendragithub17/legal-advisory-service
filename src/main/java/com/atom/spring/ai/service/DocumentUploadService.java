@@ -54,8 +54,13 @@ public class DocumentUploadService {
   public void init() throws IOException {
     log.info("Initializing DocumentUploadService");
     Path docPath = Path.of(documentProperties.uploadLocation());
+    Path vectorStoreFilePath = Path.of(documentProperties.vectorStoreFileLocation());
+    Path vectorStoreDirPath = vectorStoreFilePath.getParent();
     if (!Files.exists(docPath)) {
       Files.createDirectory(docPath);
+    }
+    if (!Files.exists(vectorStoreDirPath)) {
+      Files.createDirectory(vectorStoreDirPath);
     }
     log.info("DocumentUploadService initialized");
   }
